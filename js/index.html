@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link 
+            rel="stylesheet" 
+            href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css"
+        />
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" integrity="sha384-tViUnnbYAV00FLIhhi3v/dWt3Jxw4gZQcNoSCxCIFNJVCx7/D55/wXsrNIRANwdD" crossorigin="anonymous">
+        <link rel="stylesheet" href="/css/main.css">
+        <title>FERRARI | Sports Car Website Landing Page</title> 
+    </head>
+    <body>
+        <header>
+            <a href="/js/index.html" class="logo"><img src="/image/logo-removebg-preview (1).png" alt="logo"></a>
+            <a href="#" class="menu" onclick="toggleMenu();"></a>
+        </header>
+        <div class="banner">
+            <ul class="nav">
+                <li><a href="/js/index.html">Home</a></li>
+                <li><a href="/js/racing.html">Racing</a></li>
+                <li><a href="/js/contact.html">Contact</a></li>
+            </ul>
+            <div class="bg-video-list">
+                <video class="bg-video ferrari-1 active" src="/image/cars/ferrari-1.mp4" autoplay loop muted></video>
+                <video class="bg-video ferrari-2" src="/image/cars/ferrari-2.mp4" autoplay loop muted></video>
+                <video class="bg-video ferrari-3" src="/image/cars/ferrari-3.MP4" autoplay loop muted></video>
+                <video class="bg-video ferrari-4" src="/image/cars/ferrari-4.MP4" autoplay loop muted></video>
+                <video class="bg-video ferrari-5" src="/image/cars/ferrari-5.MP4" autoplay loop muted></video>
+            </div>
+            <div class="content">
+                <h1>FERRARI</h1>
+                <h3 class="model ferrari-1 active" style="color: red">458 ITALIA</h3>
+                <h3 class="model ferrari-2" style="color: #e3d10b;">488 PISTA</h3>
+                <h3 class="model ferrari-3" style="color: #4f4f4f;">488 SPIDER</h3>
+                <h3 class="model ferrari-4" style="color: #a6a6a6;">812 SUPERFAST</h3>
+                <h3 class="model ferrari-5" style="color: #52a264;">296 GTB</h3>
+                <p>The Ferrari 458 Italia has garnered over 30 international awards in its career. It added two further plaudits to that collection at the International Engine of the Year Awards when its V8 was voted "Best Performance Engine" and "Best Engine Above 4 Litres". The success being enjoyed by the 458 Italia with both critics and public alike crosses all borders.</p>
+            </div>
+            <a href="#" class="pause active" onclick="pauseVideo();">
+                <i class="bi bi-pause-circle"></i>
+            </a>
+            <a href="#" class="play" onclick="playVideo();">
+                <i class="bi bi-play-circle"></i>
+            </a>
+            <div class="gallery">
+                <button class="gallery-prev">&#8592;</button>
+                <div class="carousel">
+                    <a class="carousel-item ferrari-1" href="#"
+                    data-desc="The Ferrari 458 Italia has garnered over 30 international awards in its career. It added two further plaudits to that collection at the International Engine of the Year Awards when its V8 was voted 'Best Performance Engine' and 'Best Engine Above 4 Litres'. The success being enjoyed by the 458 Italia with both critics and public alike crosses all borders.">
+                        <img src="/image/ferrari-1.png" alt="">
+                        <h4 style="color: red">458 ITALIA</h4>
+                    </a>
+                    <a class="carousel-item ferrari-2" href="#"
+                    data-desc="The Ferrari 488 Pista is the most powerful V8 Ferrari ever built for the road. With 720 cv derived directly from racing, it delivers an extraordinary driving experience on both track and road. Every element has been designed to push the boundaries of performance.">
+                        <img src="/image/ferrari-2.png" alt="">
+                        <h4 style="color: yellow">488 PISTA</h4>
+                    </a>
+                    <a class="carousel-item ferrari-3" href="#"
+                    data-desc="The Ferrari 488 Spider features a retractable hardtop that opens in just 14 seconds. It combines the 488 GTB's turbocharged V8 power with the exhilaration of open-air driving at its finest.">
+                        <img src="/image/ferrari-3.jpg" alt="">
+                        <h4 style="color: rgb(77, 76, 76)">488 SPIDER</h4>
+                    </a>
+                    <a class="carousel-item ferrari-4" href="#"
+                    data-desc="The Ferrari 812 Superfast is powered by a naturally aspirated 6.5L V12 producing 800 cv. The most powerful road car Ferrari has ever produced, with a top speed exceeding 340 km/h and a soundtrack unlike anything else on the road.">
+                        <img src="/image/ferrari-4.png" alt="">
+                        <h4 style="color: silver">812 SUPERFAST</h4>
+                    </a>
+                    <a class="carousel-item ferrari-5" href="#"
+                    data-desc="The Ferrari 296 GTB introduces a new 120-degree V6 hybrid engine producing 830 cv total. It represents a new chapter in Ferrari's history, combining electrification with pure driving passion and everyday usability.">
+                        <img src="/image/ferrari-5.png" alt="">
+                        <h4 style="color: turquoise">296 GTB</h4>
+                    </a>
+                </div>
+                <button class="gallery-next">&#8594;</button>
+            </div>
+        </div>
+        <ul class="sci">
+            <li>
+                <a href="#"><i class="bi bi-facebook"></i></a>
+            </li>
+            <li>
+                <a href="#"><i class="bi bi-telegram"></i></a>
+            </li>
+            <li>
+                <a href="#"><i class="bi bi-youtube"></i></a>
+            </li>
+        </ul>
+        <script src="https://code.jquery.com/jquery-3.7.0.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+        <script src="./scripts.js"></script>
+        <script type="text/javascript">
+       $(document).ready(function () {
+            $('.carousel').carousel({
+                fullWidth: false,
+                indicators: false,
+                numVisible: 1,
+                noWrap: false,
+                onCycleTo: function(item) {
+                    const classes = item.className.split(' ');
+                    const name = classes.find(c => c.startsWith('ferrari-'));
+                    if (name) changeVideo(name);
+
+                    const desc = item.getAttribute('data-desc');
+                    if (desc) {
+                        document.querySelector('.banner .content p').textContent = desc;
+                    }
+                }
+            });
+            $('.gallery-next').on('click', function () {
+                $('.carousel').carousel('next');
+            });
+
+            $('.gallery-prev').on('click', function () {
+                $('.carousel').carousel('prev');
+            });
+        });
+        </script>
+    </body>
+</html>
