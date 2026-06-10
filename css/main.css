@@ -40,22 +40,27 @@ header::after {
     background: linear-gradient(90deg, var(--primary), transparent);
 }
 
-.logo img {
-    margin-top: -85px;
-    max-height: 200px;
-    width: 260%;      
-    display: flex;
-    justify-content: center;
-    filter: invert(1);
-    margin-left: -85px;
+.logo {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1001;
 }
 
+.logo img {
+    max-height: 400px;     
+    width: 100%;         
+    filter: invert(1);  
+    display: block;
+}
 
 .menu {
-    position: relative;
+    position: absolute;
     height: 30px;
-    margin-right: 10px;
-    margin-top: -50px;
+    right: 20px;
+    top: 50%;           
+    transform: translateY(-50%);    
     width: 30px;
     background: url('../image/menu-removebg-preview\ \(1\).png') no-repeat;
     background-size: 30px;
@@ -64,10 +69,11 @@ header::after {
 }
 
 .menu.active {
-    position: relative;
+    position: absolute;
     height: 30px;
-    margin-right: 10px;
-    margin-top: -50px;
+    right: 20px;
+    top: 50%;           
+    transform: translateY(-50%);     
     width: 30px;
     background: url('../image/Menu-active-removebg-preview.png') no-repeat;
     background-size: 90px;
